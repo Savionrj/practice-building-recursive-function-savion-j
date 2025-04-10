@@ -11,8 +11,9 @@ word = input.question('Enter a String to be reversed: ');
 console.log(reverseString(word));
 
 function reverseString(string) {
-  if (string.length === 0) {
+  let strLen = string.length;
+  if (strLen === 0) {
     return "";
   }
-  return reverseString(string.slice(1)) + string.charAt(0);
+  return string.charAt(strLen - 1) + reverseString(string.slice(0, strLen - 1));
 }
